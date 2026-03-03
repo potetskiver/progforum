@@ -9,42 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "bcrypt": "^6.0.0",
     "better-sqlite3": "^12.6.2",
-=======
->>>>>>> bb0efd9 (Initial commit from Create Next App)
-=======
-    "bcrypt": "^6.0.0",
-    "better-sqlite3": "^12.6.2",
->>>>>>> cb293e9 (Hello)
-=======
-    "bcrypt": "^6.0.0",
-    "better-sqlite3": "^12.6.2",
->>>>>>> cb293e9 (Hello)
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "@types/bcrypt": "^6.0.0",
     "@types/better-sqlite3": "^7.6.13",
-=======
->>>>>>> bb0efd9 (Initial commit from Create Next App)
-=======
-    "@types/bcrypt": "^6.0.0",
-    "@types/better-sqlite3": "^7.6.13",
->>>>>>> cb293e9 (Hello)
-=======
-    "@types/bcrypt": "^6.0.0",
-    "@types/better-sqlite3": "^7.6.13",
->>>>>>> cb293e9 (Hello)
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
