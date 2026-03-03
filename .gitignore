@@ -36,6 +36,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+<<<<<<< HEAD
+#databases
+*.db
+*.sqlite
+*.sqlite3
+
+*.zip
+
+=======
+>>>>>>> bb0efd9 (Initial commit from Create Next App)
 # typescript
 *.tsbuildinfo
 next-env.d.ts
