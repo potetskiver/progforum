@@ -1,3 +1,5 @@
+// app/lib/auth.ts
+
 import bcrypt from "bcrypt";
 import crypto from "crypto";
 import db from "./db";
@@ -44,6 +46,7 @@ export function deleteSession(sessionId: string) {
 type SessionUserRow = {
   id: number;
   username: string;
+  admin: boolean;
 };
 
 export function getUserBySession(sessionId: string) {
@@ -51,7 +54,7 @@ export function getUserBySession(sessionId: string) {
 
   const row = db
     .prepare(`
-      SELECT u.id as id, u.username as username
+      SELECT u.id as id, u.username as username, u.admin as admin
       FROM sessions s
       JOIN users u ON u.id = s.user_id
       WHERE s.id = ?
@@ -64,5 +67,6 @@ export function getUserBySession(sessionId: string) {
   return {
     id: row.id,
     name: row.username,
+    admin: !!row.admin
   };
 }

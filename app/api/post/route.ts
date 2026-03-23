@@ -9,6 +9,18 @@ export async function POST(request: Request) {
         return new Response("Missing required fields", { status: 400 });
     }
 
+    if(title.length < 5) {
+        return new Response("Title must be at least 5 characters long", { status: 400 });
+    }
+    
+    if(content.length < 20) {
+        return new Response("Content must be at least 20 characters long", { status: 400 });
+    }
+
+    if(content.length > 50) {
+        return new Response("Content must be less than 50 characters long", { status: 400 });
+    }
+
     return new Response(`Post created with title: ${title} and Category: ${category} by Author ID: ${authorId}`, { status: 201 });
 }
 
