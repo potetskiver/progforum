@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { getUser } from "../lib/user";
 import LogoutButton from "./LogoutButton";
-import { useRouter } from "next/navigation";
 
 export default async function Header() {
   const user = await getUser();
 
-  const router = useRouter();
-
   const changePassword = () => {
-    router.push("/changepassword");
+    window.location.href = "/changepassword";
   }
 
   return (
@@ -19,10 +16,12 @@ export default async function Header() {
       </Link>
 
       {user ? (
-        <div className="flex items-center">
-          <span className="mr-4 text-1xl" onClick={changePassword}>
-            Hello, {user.name}!
-          </span>
+        <div className="flex items-center mt-2">
+          <Link href="/changepassword" className="text-1xl">
+            <span className="mr-2 text-1xl">
+              Hello, {user.name}!
+            </span>
+          </Link>
           <LogoutButton />
         </div>
       ) : (
