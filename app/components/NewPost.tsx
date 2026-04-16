@@ -22,7 +22,7 @@ export default function NewPost(){
         e.preventDefault();
         setError(null);
 
-        const res = await fetch("/api/post", {
+        const res = await fetch("/api/posts/post", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -37,12 +37,12 @@ export default function NewPost(){
         }
 
         router.push("/");
-        router.refresh();
+        window.location.reload();
     }
 
     return (
-    <main className="h-auto flex items-center justify-start bg-gray-500">
-      <div className="w-full max-w-md p-8 border rounded shadow">
+    <main className="fixed inset-0 flex items-center justify-center z-40 pointer-events-none">
+      <div className="pointer-events-auto w-full max-w-md p-8 border rounded shadow bg-black">
         <h1 className="text-3xl font-bold mb-6">New post</h1>
 
         <form onSubmit={handlePost} className="space-y-4">
@@ -70,7 +70,7 @@ export default function NewPost(){
 
           {error && <p className="text-red-600">{error}</p>}
 
-          <button onClick={handlePost} className="w-full bg-gray-800 text-white p-2 rounded">
+          <button onClick={handlePost} className="w-full bg-gray-800 text-white p-2 rounded hover:bg-black">
             Post
           </button>
         </form>
