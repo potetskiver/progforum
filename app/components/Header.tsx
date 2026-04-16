@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getUser } from "../lib/user";
+import { getUser } from "../lib/user-server";
 import LogoutButton from "./LogoutButton";
 
 export default async function Header() {

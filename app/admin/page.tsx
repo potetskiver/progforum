@@ -1,4 +1,4 @@
-import { getUser } from "../lib/user";
+import { getUser } from "../lib/user-server";
 
 export default async function AdminPage() {
     const user = await getUser();
