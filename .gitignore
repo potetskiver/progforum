@@ -43,8 +43,6 @@ yarn-error.log*
 
 *.zip
 
-/app/admin
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
