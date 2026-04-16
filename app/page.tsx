@@ -5,7 +5,7 @@ import PostButton from "./components/PostButton";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-6">
-      <h1 className="text-4xl font-bold mt-6">Welcome to ProgForum!</h1>
+      <h1 className="text-4xl font-bold mb-1">Welcome to ProgForum!</h1>
 
       <div className="relative flex min-h-screen flex-col items-center justify-start p-8 bg-gray-100 rounded-lg shadow-md mt-6 w-full h-auto max-w-4xl">
         <PostButton className="absolute top-4 right-4" />
