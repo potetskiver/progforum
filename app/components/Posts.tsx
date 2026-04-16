@@ -17,16 +17,23 @@ export default function Posts({ className }: { className?: string }){
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/posts')
-            .then(res => res.json())
-            .then(data => {
-                setPosts(data);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error(err);
-                setLoading(false);
-            });
+        const fetchPosts = () => {
+            fetch('/api/posts')
+                .then(res => res.json())
+                .then(data => {
+                    setPosts(data);
+                    setLoading(false);
+                })
+                .catch(err => {
+                    console.error(err);
+                    setLoading(false);
+                });
+        };
+
+        fetchPosts(); // Initial fetch
+        const interval = setInterval(fetchPosts, 5000); // Fetch every 5 seconds
+
+        return () => clearInterval(interval); // Cleanup on unmount
     }, []);
 
     if (loading) return <div>Loading posts...</div>;

@@ -15,12 +15,16 @@ export async function POST(request: Request) {
         return Response.json({ error: "Title must be at least 5 characters long" }, { status: 400 });
     }
     
-    if(content.length < 20) {
-        return Response.json({ error: "Content must be at least 20 characters long" }, { status: 400 });
+    if(category.length > 5){
+        return Response.json({ error: "Category must be shorter than 5 characters"}, { status: 400 });
     }
 
-    if(content.length > 50) {
-        return Response.json({ error: "Content must be less than 50 characters long" }, { status: 400 });
+    if(content.length < 5) {
+        return Response.json({ error: "Content must be at least 5 characters long" }, { status: 400 });
+    }
+
+    if(content.length > 150) {
+        return Response.json({ error: "Content must be less than 150 characters long" }, { status: 400 });
     }
 
     try {

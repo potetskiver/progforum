@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 
 interface DeletePostProps {
     postId: number;
+    all?: boolean;
 }
 
-export default function DeletePost({ postId }: DeletePostProps) {
+export default function DeletePost({ postId, all }: DeletePostProps) {
     const router = useRouter();
     const [isAdmin, setIsAdmin] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ export default function DeletePost({ postId }: DeletePostProps) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ postId })
+            body: JSON.stringify({ postId, all })
         }).then(() => {
             router.push("/");
             window.location.reload();
